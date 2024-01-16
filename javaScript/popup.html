@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popup</title>
+    <style>
+      .parent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin: 5% auto;
+      }
+      body {
+        background: url(https://wallpapercave.com/wp/wp12811357.jpg) no-repeat
+          center center/cover;
+      }
+      h1 {
+        font-size: 60px;
+      }
+      input {
+        width: 50%;
+        height: 100px;
+        text-align: center;
+        font-size: 40px;
+        border: none;
+        border-radius: 30px;
+        background-color: whitesmoke;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.45) inset;
+      }
+      input:focus {
+        outline: none;
+      }
+      input::placeholder {
+        font-size: 30px;
+      }
+      button {
+        width: 20%;
+        height: 50px;
+        border-radius: 20px;
+        border: none;
+        background-color: white;
+        box-shadow: 0px -23px 25px 0px rgba(220, 19, 145, 0.17) inset,
+          0px -36px 30px 0px rgba(0, 0, 0, 0.15) inset,
+          0px -79px 40px 0px rgba(0, 0, 0, 0.1) inset,
+          0px 2px 1px 0px rgba(0, 0, 0, 0.06),
+          0px 4px 2px 0px rgba(0, 0, 0, 0.09),
+          0px 8px 4px 0px rgba(0, 0, 0, 0.09),
+          0px 16px 8px 0px rgba(0, 0, 0, 0.09);
+      }
+      button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main_div">
+      <div class="parent">
+        <h1>RESULT METER</h1>
+        <input
+          type="text"
+          name=""
+          id="input_type"
+          placeholder="ENTER YOUR MARKS !!!"
+        />
+        <button onclick="clickMe()">click me</button>
+      </div>
+    </div>
+    <script>
+      function clickMe() {
+        let a = document.getElementById("input_type").value;
+        //>33 fail
+        //33 to 50 pass
+        //<51 first class
+        if (a == "") {
+          alert("please enter a number");
+        } else if (a >= 33 && a <= 50) {
+          alert("pass");
+        } else if (a >= 51 && a <= 79) {
+          alert("second class");
+        } else if (a >= 80 && a <= 100) {
+          alert("first class");
+        } else if (a > 100) {
+          alert("enter valid marks");
+        } else {
+          alert("fail");
+        }
+      }
+    </script>
+  </body>
+</html>

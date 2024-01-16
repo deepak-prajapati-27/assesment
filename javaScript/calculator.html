@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calculator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: url(../images/stacked-steps-haikei.png);
+      }
+      input {
+        padding: 30px;
+        width: 700px;
+        font-size: 30px;
+        text-align: center;
+        border: none;
+        border-radius: 10px;
+      }
+      .parent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10% auto;
+        gap: 20px;
+      }
+      #display {
+        background-color: black;
+        color: wheat;
+        font-size: 30px;
+        padding: 20px;
+        text-align: center;
+        width: 300px;
+        border: none;
+        border-radius: 0px 30px;
+      }
+      button {
+        padding: 30px;
+        width: 150px;
+        font-size: 30px;
+        text-align: center;
+        background-color: rgb(23, 224, 200);
+        border: none;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <input type="text" name="" id="num-one" placeholder="number-1" />
+      <input type="text" name="" id="num-two" placeholder="number-2" />
+      <div>
+        <button onclick="add()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mul()">*</button>
+        <button onclick="div()">/</button>
+      </div>
+      <span id="display">RESULT</span>
+    </div>
+    <script>
+      function add() {
+        let a = parseInt(document.getElementById("num-one").value);
+        let b = parseInt(document.getElementById("num-two").value);
+        let c = a + b;
+        document.getElementById("display").innerText = c;
+      }
+      function sub() {
+        let a = parseInt(document.getElementById("num-one").value);
+        let b = parseInt(document.getElementById("num-two").value);
+        let c = a - b;
+        document.getElementById("display").innerText = c;
+      }
+      function mul() {
+        let a = parseInt(document.getElementById("num-one").value);
+        let b = parseInt(document.getElementById("num-two").value);
+        let c = a * b;
+        document.getElementById("display").innerText = c;
+      }
+      function div() {
+        let a = parseInt(document.getElementById("num-one").value);
+        let b = parseInt(document.getElementById("num-two").value);
+        let c = a / b;
+        document.getElementById("display").innerText = c;
+      }
+      //uppercase
+      // function uppercase() {
+      //   let a = document.getElementById("num-one").value;
+      //   // document.getElementById("num-one").value = a.toUpperCase();
+      //   document.getElementById("display").innerText = a.toUpperCase();
+      //   document.getElementById("display").style.backgroundColor = "khaki";
+      //   document.getElementById("display").style.color = "black";
+      // }
+    </script>
+  </body>
+</html>

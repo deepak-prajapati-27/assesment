@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode Single Button</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        text-align: center;
+      }
+      button {
+        background-color: grey;
+        width: 200px;
+        height: 50px;
+        margin-top: 20px;
+      }
+      h1 {
+        color: gray;
+      }
+    </style>
+  </head>
+  <body id="unique">
+    <h1>DARK MODE</h1>
+    <p id="p_tag">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum unde
+      eveniet accusantium aperiam saepe quisquam blanditiis soluta repellat.
+      Porro ex ducimus consequatur iusto et mollitia eum veritatis dicta, labore
+      temporibus maiores minima delectus voluptatum esse voluptatibus. Sint
+      velit rem harum maiores quibusdam rerum fugiat distinctio pariatur culpa
+      minus odio expedita unde mollitia aspernatur obcaecati odit dolorum
+      exercitationem fuga, aliquam sit. Doloremque recusandae adipisci quam
+      eveniet ut perferendis dicta, accusantium odio ab aut atque consequuntur
+      saepe dolore animi dolor nobis modi suscipit nemo corrupti illo.
+      Perspiciatis molestias eos numquam corrupti tempore at natus id! Quisquam,
+      assumenda. Sint, inventore? Qui, odit earum.
+    </p>
+    <button onclick="on()">ON/OFF</button>
+    <script>
+      function on() {
+        if (
+          document.getElementById("unique").style.backgroundColor !== "black"
+        ) {
+          document.getElementById("unique").style.backgroundColor = "black";
+          document.getElementById("p_tag").style.color = "white";
+        } else {
+          document.getElementById("unique").style.backgroundColor = "white";
+          document.getElementById("p_tag").style.color = "black";
+        }
+      }
+    </script>
+  </body>
+</html>

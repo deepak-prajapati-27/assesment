@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>image change</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: url(../images/blurry-gradient-haikei.png) no-repeat center
+          center/cover;
+      }
+      #img-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+        margin: 5% auto;
+        gap: 20px;
+      }
+      img {
+        width: 100%;
+      }
+      button {
+        width: 200px;
+        height: 50px;
+        border-radius: 30px;
+        border: none;
+        background-color: rgb(16, 15, 16);
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      h1 {
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="img-div">
+      <h1>IMAGE CHANGER</h1>
+      <img
+        src="https://t4.ftcdn.net/jpg/05/52/20/61/360_F_552206181_KdToyQFo2ZSqBTv2aBiMUJcDVPXaaE3p.jpg"
+        alt=""
+        id="img"
+      />
+      <button onclick="image_change()">Click here</button>
+    </div>
+    <script>
+      function image_change() {
+        if (
+          document.getElementById("img").src ==
+          "https://t4.ftcdn.net/jpg/05/52/20/61/360_F_552206181_KdToyQFo2ZSqBTv2aBiMUJcDVPXaaE3p.jpg"
+        ) {
+          document.getElementById("img").src =
+            "https://t4.ftcdn.net/jpg/04/88/71/05/360_F_488710566_04tsm0UWBwepU3xBEdzOwvgI7wrBsgpN.jpg";
+        } else if (
+          document.getElementById("img").src ==
+          "https://t4.ftcdn.net/jpg/04/88/71/05/360_F_488710566_04tsm0UWBwepU3xBEdzOwvgI7wrBsgpN.jpg"
+        ) {
+          document.getElementById("img").src =
+            "https://static.vecteezy.com/system/resources/thumbnails/016/006/015/small/aesthetic-neon-ring-background-free-vector.jpg";
+        } else if (
+          document.getElementById("img").src ==
+          "https://static.vecteezy.com/system/resources/thumbnails/016/006/015/small/aesthetic-neon-ring-background-free-vector.jpg"
+        ) {
+          document.getElementById("img").src =
+            "https://thumbs.dreamstime.com/b/beautiful-aesthetic-anime-character-wallpaper-generative-ai-274590210.jpg";
+        } else {
+          document.getElementById("img").src =
+            "https://t4.ftcdn.net/jpg/05/52/20/61/360_F_552206181_KdToyQFo2ZSqBTv2aBiMUJcDVPXaaE3p.jpg";
+        }
+      }
+    </script>
+  </body>
+</html>

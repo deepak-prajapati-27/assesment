@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Converter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        background:url(../images/whitebg.jpg) no-repeat center center/cover ;
+
+      }
+      .input_type{
+        padding: 20px;
+        width: 50%;
+        height: 90px;
+        border: none;
+        background-color:pink;
+        color:black;
+        border-radius: 10px;
+        box-shadow: rgba(240, 130, 46, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+        font-size: 40px;
+        margin-top: 20px
+      }
+      .parent{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+      }
+      button{
+        padding: 20px;
+        width: 300px;
+        background-color: rgb(196, 255, 254);
+        cursor: pointer;
+        border: none;
+        border-radius: 30px 30px 0px 30px ;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+      }
+      button:hover{
+        background-color:black;
+        color: bisque;
+        padding: 25px ;
+        width: 310px;
+        
+      }
+      .child{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 50%;
+        align-items: center;
+        column-gap: 50px;
+        
+      }
+      .word_change{
+        background-color: #e7ab8f;
+        color: black;
+        width: 360%;
+        height: 50px;
+        font-size: 15px;
+        text-align: center;
+        border-radius: 10px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;;
+      }
+      .result ::placeholder{
+        color: black;
+      }
+      .result{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+     #unique{
+      padding-top: 20px;
+     }
+     input:focus
+     
+     {
+      outline: none;
+     }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Libre+Baskerville&family=Montserrat&family=Outfit:wght@400;500;600&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+      
+        <div class="parent">
+        <input type="text" id="word" value="" placeholder="Type Here ..." class="input_type"/>
+        <p>NOTE: For word count and character count see at the end of the page !!!!!!!!</p>
+        <div class="child">
+        <button onclick="uppercase()">Uppercase</button>
+        <button onclick="lowercase()">Lowercase</button>
+        <button onclick="clear()">Clear</button>
+        <button onclick="wordcount()">Word Count</button>
+        <button onclick="trim()">Trim</button>
+        <button onclick="spaceremove()">Space Remove</button>
+        <button onclick="charcount()">Character Count</button>
+        <button onclick="fnr()">Find And Replace</button>
+      </div>
+      <div class="result">
+        <input type="text" name="" id="new_word" class="word_change" placeholder="Type here the word you want to replace">
+        <input type="text" name="" id="replace_word" class="word_change" placeholder="Type here the word you want to replace with">
+       
+          <span id="unique" class="word_change">RESULT</span>
+      
+      </div>
+    </div>
+      </div>
+    </div>
+    <script>
+function uppercase() {
+    let a = document.getElementById("word").value;
+    document.getElementById("word").value = a.toUpperCase();
+}
+function lowercase(){
+    let b= document.getElementById("word").value;
+    document.getElementById("word").value = b.toLowerCase();
+}
+function clear(){
+ document.getElementById("word").value = '';
+}
+function wordcount(){
+    let c=document.getElementById("word").value ;
+    document.getElementById("unique").innerText = c.trim().split(/\s+/).length;
+}
+function trim(){
+    let d=document.getElementById("word").value;
+    document.getElementById("word").value = d.trim();
+}
+function spaceremove(){
+  let e=document.getElementById("word").value;
+  document.getElementById("word").value = e.split(" ").join("");
+}
+function charcount(){
+  let f=document.getElementById("word").value;
+  document.getElementById("unique").innerText=f.length;
+}
+function fnr(){
+  let g=document.getElementById("word").value;
+  let h=document.getElementById("new_word").value;
+  let i=document.getElementById("replace_word").value;
+  document.getElementById("word").value =g.replace(h, i);
+
+}
+
+    </script>
+  </body>
+</html>
