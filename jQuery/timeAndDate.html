@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #clock {
+        box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
+          -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
+          12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
+          -10px -7px 27px 1px #8e5cff, 5px 5px 0px 5px rgba(61, 90, 255, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div id="dgital-clock">
+        <!-- to show day date and year  -->
+        <div id="day-wrap"></div>
+        <div id="clock"></div>
+      </div>
+    </section>
+
+    <!-- jQuery cdn -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- jQuery css -->
+    <script>
+      $("*").css({
+        margin: "0",
+        padding: "0",
+        boxSizing: "borderBox",
+        textTransform: "capitalize",
+        textAlign: "center",
+      });
+      $("#dgital-clock").css({
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+      });
+      $("#day-wrap").css({
+        fontSize: "30px",
+        backgroundColor: "aqua",
+        color: "black",
+        margin: "20px",
+        borderRadius: "12px",
+        padding: "20px",
+        boxShadow: "0px 3px 19px 0px #0000004f",
+      });
+      $("#clock").css({
+        backgroundColor: "black",
+        color: "white",
+        margin: "20px",
+        borderRadius: "12px",
+        padding: "15px",
+        fontSize: "40px",
+        border: "1px solid #fff",
+      });
+    </script>
+
+    <!-- script starts here -->
+    <script>
+      setInterval(dgitalclock, 1000);
+      function dgitalclock() {
+        // time
+        let date = new Date();
+        console.log(date); // result Tue Feb 13 2024 12:20:41 GMT+0530 (India Standard Time)
+
+        // hours
+
+        let hrs = date.getHours();
+        console.log(hrs); // 12
+
+        // mins
+
+        let mins = date.getMinutes();
+        console.log(mins); // 23
+
+        //   seconds
+        let seconds = date.getSeconds();
+        console.log(seconds);
+
+        //    print time
+
+        let time = `${hrs + " Hours"}:${mins + " Min"}:${seconds + " sec"}`;
+        console.log(time);
+
+        // print day date and year
+        let today = date.getDay();
+        if (today == 0) {
+          today = "sunday";
+        }
+        if (today == 1) {
+          today = "monday";
+        }
+        if (today == 2) {
+          today = "tuesday";
+        }
+        if (today == 3) {
+          today = "Wednesday";
+        }
+        if (today == 4) {
+          today = "Thursday";
+        }
+        if (today == 5) {
+          today = "Friday";
+        }
+        if (today == 6) {
+          today = "Saturday";
+        }
+        // get month
+        let month = date.getMonth();
+        if (month == 0) {
+          month = "January";
+        }
+        if (month == 1) {
+          month = "Febuary";
+        }
+        if (month == 2) {
+          month = "March";
+        }
+        if (month == 3) {
+          month = "April";
+        }
+        if (month == 4) {
+          month = "May";
+        }
+        if (month == 5) {
+          month = "June";
+        }
+        if (month == 6) {
+          month = "July";
+        }
+        if (month == 7) {
+          month = "August";
+        }
+        if (month == 8) {
+          month = "Spetember";
+        }
+        if (month == 9) {
+          month = "October";
+        }
+        if (month == 10) {
+          month = "November";
+        }
+        if (month == 11) {
+          month = "December";
+        }
+
+        let aajkadin = `${today},${month} ${date.getDate()},${date.getFullYear()}`;
+
+        document.getElementById("day-wrap").innerHTML = aajkadin;
+        document.getElementById("clock").innerHTML = time;
+      }
+    </script>
+  </body>
+</html>
