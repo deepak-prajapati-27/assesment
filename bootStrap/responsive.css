@@ -1,0 +1,21 @@
+@media (max-width: 425px) {
+  body {
+    overflow-x: hidden;
+  }
+  .carousel-item-next,
+  .carousel-item-prev,
+  .carousel-item.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel-item {
+    height: 390px;
+  }
+  .name h3 {
+    font-size: 16px;
+  }
+  .single-img-box img {
+    min-height: 250px;
+  }
+}
